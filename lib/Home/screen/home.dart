@@ -62,7 +62,7 @@ class _homeState extends State<home> {
                      btnText: "PURCHASING",
 
                      ontap: (){
-                       Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>actionn_page()));
+                       Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ActionPage(pageTitle: "PURCHASING",)));
                      }
                    ),
                   SizedBox(
@@ -71,7 +71,7 @@ class _homeState extends State<home> {
                   buildMyButton(
                       btnText: "REFUNDING",
                       ontap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>actionn_page()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ActionPage(pageTitle: "REFUNDING",)));
                       }
                   ),
                 ],

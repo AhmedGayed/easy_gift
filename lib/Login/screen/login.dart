@@ -57,7 +57,7 @@ class _loginnState extends State<loginn> {
                                           color: Color(0xff808080),
                                           size: 30,
                                         ),
-                                        label: Text("User Name"),
+                                        labelText: ("User Name"),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(color: Color(0xff848484), width: 1),
                                         ),
@@ -86,7 +86,7 @@ class _loginnState extends State<loginn> {
                                           color: Color(0xff808080),
                                           size: 30,
                                         ),
-                                        label: Text("Password"),
+                                        labelText: ("Password"),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(color: Color(0xff848484), width: 1),
                                         ),
