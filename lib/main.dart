@@ -7,7 +7,7 @@ import 'Login/screen/login3.dart';
 import 'Login/screen/login.dart';
 import 'actionn_page/actionn_page.dart';
 import 'any/any.dart';
-import 'confirmation_page/confrimation page.dart';
+import 'confirmation_page/confrimation_page.dart';
 
 
 void main() {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Cairo',
           primarySwatch: Colors.blue,
         ),
-        home: conformation_page()
+        home: const loginn()
     );
   }
 

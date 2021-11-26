@@ -1,5 +1,6 @@
 import 'package:easy_gift/Drawar/widget/navigation_drawer_widget.dart';
 import 'package:easy_gift/ReusableComponents/reusable_components.dart';
+import 'package:easy_gift/confirmation_page/confrimation_page.dart';
 import 'package:easy_gift/shared_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'common_button.dart';
 import 'common_quntitiy_button.dart';
 
+// ignore: must_be_immutable
 class ActionPage extends StatefulWidget {
   String pageTitle;
 
@@ -316,6 +318,22 @@ class _ActionPageState extends State<ActionPage> {
                 child: ElevatedButton(
                   onPressed: scanQr,
                   child: Text('Scanner'),
+                  style: ElevatedButton.styleFrom(
+                      primary: Color(0xFFfdb913),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      minimumSize: Size(double.infinity, 45)),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ConfiermPage(pageTitle: widget.pageTitle,amount:number.toString() ,)));
+                  },
+                  child: Text('next'),
                   style: ElevatedButton.styleFrom(
                       primary: Color(0xFFfdb913),
                       textStyle:

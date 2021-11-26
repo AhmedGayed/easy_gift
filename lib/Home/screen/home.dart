@@ -21,12 +21,12 @@ class _homeState extends State<home> {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
 
-        title: Text("Home"),
+        title:const Text("Home"),
 
 
       ),
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xFFF8F8F9),
+      backgroundColor:const Color(0xFFF8F8F9),
       body: Center(
         child: Stack(
             children: [
@@ -52,8 +52,8 @@ class _homeState extends State<home> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(SharedText.userName),
-                  Text("carfor 3obor"),
-                  CircleAvatar(radius: 30, backgroundImage: AssetImage(
+                  const Text("carfor 3obor"),
+                  const CircleAvatar(radius: 30, backgroundImage: AssetImage(
                     "assest/user.png",
                   ),),
 
@@ -65,7 +65,7 @@ class _homeState extends State<home> {
                        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ActionPage(pageTitle: "PURCHASING",)));
                      }
                    ),
-                  SizedBox(
+                  const   SizedBox(
                     height: 20,
                   ),
                   buildMyButton(
