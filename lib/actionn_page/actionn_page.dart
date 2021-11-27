@@ -31,22 +31,32 @@ class _ActionPageState extends State<ActionPage> {
   bool _100 = false;
   bool _150 = false;
   bool _200 = false;
-  int number = 0;
+  TextEditingController controller = TextEditingController();
 
   void addnumber() {
     setState(() {
-      number++;
+      int temp=int.parse( controller.text);
+      temp++;
+      controller.text=temp.toString();
     });
   }
 
   void subnumber() {
     setState(() {
-      if(number >0)
-      number--;
+      int temp=int.parse( controller.text);
+      if(temp >0) {
+        temp--;
+        controller.text=temp.toString();
+
+      }
     });
   }
 
-  var numberController = TextEditingController();
+@override
+  void initState() {
+  controller.text="1";
+  super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +148,13 @@ class _ActionPageState extends State<ActionPage> {
                                           color: Colors.grey,
                                         ),
                                       ),
-                                      child: Center(child: Text("$number")),
+                                      child: Center(child: TextFormField(
+                                        controller: controller,
+                                        textAlignVertical: TextAlignVertical.center,
+                                        textAlign: TextAlign.center,
+                                        keyboardType: TextInputType.number,
+
+                                      ),),
                                     ),
                                     const SizedBox(
                                       width: 5,
@@ -164,9 +180,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '5 L.E',
                                           onPressed: () {
                                             if (_hasBeenPressed) {
-                                              number -= 5;
+                                              int temp =int.parse( controller.text);
+                                              temp -=5;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 5;
+                                              int temp =int.parse( controller.text);
+                                              temp +=5;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() {
                                               _hasBeenPressed =
@@ -182,9 +202,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '25 L.E',
                                           onPressed: () {
                                             if (_25) {
-                                              number -= 25;
+                                              int temp =int.parse( controller.text);
+                                              temp -=25;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 25;
+                                              int temp =int.parse( controller.text);
+                                              temp +=25;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() => _25 = !_25);
                                           },
@@ -197,9 +221,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '50 L.E',
                                           onPressed: () {
                                             if (_50) {
-                                              number -= 50;
+                                              int temp =int.parse( controller.text);
+                                              temp -=50;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 50;
+                                              int temp =int.parse( controller.text);
+                                              temp +=50;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() => _50 = !_50);
                                           },
@@ -228,9 +256,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '100 L.E',
                                           onPressed: () {
                                             if (_100) {
-                                              number -= 100;
+                                              int temp =int.parse( controller.text);
+                                              temp -=100;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 100;
+                                              int temp =int.parse( controller.text);
+                                              temp +=100;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() => _100 = !_100);
                                           },
@@ -243,9 +275,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '150 L.E',
                                           onPressed: () {
                                             if (_150) {
-                                              number -= 150;
+                                              int temp =int.parse( controller.text);
+                                              temp -=150;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 150;
+                                              int temp =int.parse( controller.text);
+                                              temp +=150;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() => _150 = !_150);
                                           },
@@ -258,9 +294,13 @@ class _ActionPageState extends State<ActionPage> {
                                           value: '200 L.E',
                                           onPressed: () {
                                             if (_200) {
-                                              number -= 200;
+                                              int temp =int.parse( controller.text);
+                                              temp -=200;
+                                              controller.text=temp.toString();
                                             } else {
-                                              number += 200;
+                                              int temp =int.parse( controller.text);
+                                              temp +=200;
+                                              controller.text=temp.toString();
                                             }
                                             setState(() => _200 = !_200);
                                           },
@@ -331,7 +371,7 @@ class _ActionPageState extends State<ActionPage> {
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ConfiermPage(pageTitle: widget.pageTitle,amount:number.toString() ,)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ConfiermPage(pageTitle: widget.pageTitle,amount:controller.text.toString() ,)));
                   },
                   child: Text('next'),
                   style: ElevatedButton.styleFrom(
